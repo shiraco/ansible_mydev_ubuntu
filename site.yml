@@ -1,0 +1,11 @@
+---
+- name: apply development to all nodes
+  hosts: all
+  vars_prompt:
+  - name: "remote_user"
+    prompt: "Enter remote_user"
+    default: "ubuntu"
+    private: no
+  remote_user: "{{ remote_user }}"
+  roles:
+  - development
